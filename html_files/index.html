@@ -1,14 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Car Control</title>
+    <title>Użycie czcionki Vina Sans</title>
+    <!-- Dodaj link do stylu czcionki -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vina+Sans:wght@400;700&display=swap">
+    <style>
+        /* Zastosuj czcionkę do wybranych elementów */
+        body {
+            font-family: 'Vina Sans', sans-serif;
+        }
+        h1 {
+            margin-top: 10px;
+            font-family: 'Vina Sans', sans-serif;
+            font-size: 235px;
+            color: #4141d1;
+            text-align: center;
+            line-height: 1.2; /* Odstęp między liniami */
+        }
+        h2 {
+            margin-top: 10px;
+            font-size: 80px;
+            text-align: center; 
+            color: #4a4a90;
+        }
+        h3 {
+            margin-top: 10px;
+            font-size: 80px;
+            text-align: center; 
+            color: #4a4a90;
+            
+        }
+        h4 {
+            margin-top: 10px;
+            font-size: 80px;
+            text-align: center; 
+            color: #4a4a90;
+        }
+        /* Dodaj inne reguły CSS według potrzeb */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around; /* Rozłożenie elementów wzdłuż osi poziomej */
+        }
+        .section {
+            flex-basis: calc(33.33% - 20px); /* Szerokość każdej sekcji */
+            margin: 10px; /* Odstęp między sekcjami */
+        }
+        button, a {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 18px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            background-color: #4a4a90;
+            text-decoration: none;
+        }
+        .arrows {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            height: 180px;
+            align-items: center;
+            
+        }
+        .arrow {
+            flex-basis: 20%;
+            
+        }
+        .arrow.up,
+        .arrow.down {
+            width: 15%;
+        }
+    </style>
 </head>
-<body> <h1>PicoW Remote Control Car</h1>
-<br>
-<h2>Led Control</h2>
-<a href="/led.cgi?led=1"><button>LED ON</button></a>
-<a href="/led.cgi?led=0"><button>LED OFF</button></a>
-<br>
-<a href="/index.html">Refresh</a>
+<body>
+    <h1>PICO W - <br> REMOTE CONTROLLED  CAR </h1>
+    <div class="container">
+        <div class="section">
+            <h2>Led Control</h2>
+            <a href="/led.cgi?led=1"><button>LED ON</button></a>
+            <a href="/led.cgi?led=0"><button>LED OFF</button></a>
+        </div>
+        <div class="section">
+            <h3>CAR MOVEMENT CONTROL</h3>
+            <div class="arrows">
+                
+                <a href="/car_movement.cgi?direction=forward" class="arrow up">&#9650;</a>
+                <div style="display: flex; justify-content: space-between; width: 50%;height:50%; width: 50%;">
+                    <a href="/car_movement.cgi?direction=left" class="arrow">&#9668;</a>
+                    <a href="/car_movement.cgi?direction=right" class="arrow">&#9658;</a>
+                </div>
+                <a href="/car_movement.cgi?direction=backward" class="arrow down">&#9660;</a>
+            </div>
+        </div>
+    
+        <div class="section">
+            <h4>CONNECTION CONTROL</h4>
+            <a href="/con_ctrl.cgi?y=1"><button>Check Connection</button></a>
+            <a href="/con_ctrl.cgi?x=0"><button>STOP</button></a>
+        </div>
+    </div>
 </body>
 </html>
