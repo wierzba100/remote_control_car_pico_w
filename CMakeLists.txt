@@ -24,8 +24,7 @@ add_compile_options(-Wall
 
 set(FILES
     main.c
-
-        )
+)
 
 add_executable(${PROJECT_NAME} ${FILES})
 

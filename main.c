@@ -3,10 +3,11 @@
 #include "pico/cyw43_arch.h"
 #include "lwipopts.h"
 #include "cgi.h"
+#include "ssi.h"
 #include "hardware/gpio.h"
 
-const char WIFI_SSID[] = "Router_0";
-const char WIFI_PASSWORD[] = "tajemnica54321";
+const char WIFI_SSID[] = "your_wifi_name";
+const char WIFI_PASSWORD[] = "your_wifi_password";
 
 void motor_pins_init(void)
 {
@@ -38,6 +39,9 @@ int main() {
     // Initialise web server
     httpd_init();
     printf("Http server initialised\n");
+
+    ssi_init();
+    printf("SSI Handler initialised\n");
 
     cgi_init();
     printf("CGI Handler initialised\n");

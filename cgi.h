@@ -25,7 +25,7 @@ const char * cgi_led_handler(int iIndex, int iNumParams, char *pcParam[], char *
         }
     }
     // Send the index page back to the user
-    return "/index.html";
+    return "/index.shtml";
 }
 
 void set_motor_pins(bool motor_a_forw, bool motor_a_back, bool motor_b_forw, bool motor_b_back)
@@ -52,11 +52,14 @@ const char * car_movement_handler(int iIndex, int iNumParams, char *pcParam[], c
         }else if(strcmp(pcValue[0], "backward") == 0)
         {
             set_motor_pins(false,true,false,true);
+        }else if(strcmp(pcValue[0], "stop") == 0)
+        {
+            set_motor_pins(false,false,false,false);
         }
     }
 
     // Send the index page back to the user
-    return "/index.html";
+    return "/index.shtml";
 }
 
 // tCGI Struct
